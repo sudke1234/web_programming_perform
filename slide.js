@@ -1,9 +1,9 @@
 
 window.onload = function() {
-    const kindWrap = document.querySelector('.kind_wrap');
-    const slider = kindWrap.querySelector('.slider');
-    const slideLis = slider.querySelectorAll('li');
-    const moveButtons = kindWrap.querySelectorAll('.arrow a , .arrow_button a');
+    const kindWrap = document.querySelector('.kind_wrap');/* slider 스타일 지정하는 거 */
+    const slider = kindWrap.querySelector('.slider');/* 슬라이더들 가지고 오기 */
+    const slideLis = slider.querySelectorAll('li');/* 슬라이더 이미지 전부 가지고 오기 */
+    const moveButtons = kindWrap.querySelectorAll('.arrow a , .arrow_button a');/*버튼 가지고 오기*/
 
     /* ul 넓이 계산해 주기 */
     const liWidth = slideLis[0].clientWidth;

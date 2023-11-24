@@ -21,13 +21,21 @@ header {
   background-color: #333;
   color: white;
   padding: 20px;
-  display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-header .logo{
+header .logo , header nav{/*레이어 2앞으로 올리기(z-index)  +  position 고정*/
+  position: fixed;
+  z-index: 2;
+}
+header .logo{/*왼쪽 0으로 고정*/
   font-size: 50px;
+  left: 0;
+}
+
+header nav{/*오른쪽 0으로 고정*/
+  right: 0;
 }
 
 header nav ul {
@@ -48,7 +56,6 @@ header nav ul li a {
 header nav ul li a:hover{
   color: #615050;
 }
-
 .kind_wrap {   
   width:100%; 
   max-width:1300px;
