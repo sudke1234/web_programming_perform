@@ -1,106 +1,129 @@
-.slide {
-    /* layout */
+:root{
+  --basic-color : #000000; 
+  --basic-font : 30px
+}
+@font-face {
+  font-family: 'Yeongdeok Snow Crab';
+  font-weight: 400;
+  src: url('D:/My Computer/Documents/GitHub/web_programming_perform/font/Yeongdeok Snow Crab.otf');
+}
+
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+  font-family: 'Yeongdeok Snow Crab',sans-serif;
+}
+header {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .logo{
+  font-size: 50px;
+}
+
+header nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+}
+
+header nav ul li {
+  margin-right: 20px;
+}
+
+header nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+header nav ul li a:hover{
+  color: #615050;
+}
+
+.kind_wrap {   
+  width:100%; 
+  max-width:1300px;
+  margin:0 auto 0; 
+  position: relative;
+  background-position: cover;
+}
+
+.kind_wrap .arrow{/* 버튼  */
+    position: absolute;/*슬라이드 위에 있게 하기*/
+    top: 90%; 
+    left: 0; 
+    right: 0;
+    text-align: center;
+}
+
+.kind_wrap .context{/*-----이거 누르면 게임 나옴-------*/
+  position: absolute;
+  top: 40%;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 25px
+}
+.kind_wrap > .kind_slider {
+  overflow-x: visible; 
+  overflow-y: hidden;
+  overflow: hidden;/*슬라이드 흘러넘치지 않게 하기*/
+}
+.kind_wrap > .kind_slider .slider { 
+  position: relative; 
+  transition: 0.5s;
+}
+.kind_wrap > .kind_slider .slider li {
+  float:left;
+}
+.kind_wrap > .kind_slider img {/* 이미지 위에 딱 붙이기!*/
+  vertical-align: top;
+}
+.arrow{
     display: flex;
-    flex-wrap: nowrap;
-    /* 컨테이너의 내용물이 컨테이너 크기(width, height)를 넘어설 때 보이지 않도록 하기 위해 hidden을 준다. */
-    overflow: hidden;
-  
-    /* position */
-    /* slide_button의 position absolute가 컨테이너 안쪽에서 top, left, right offset이 적용될 수 있도록 relative를 준다. (기본값이 static인데, static인 경우 그 상위 컨테이너로 나가면서 현재 코드에선 html을 기준으로 offset을 적용시키기 때문) */
-    position: relative;
-  
-    /* size */
-    width: 100%;
-  
-    /* slide drag를 위해 DOM요소가 드래그로 선택되는것을 방지 */
-    user-select: none;
-  }
-  .slide_item {
-    /* layout */
-    display: flex;
-    align-items: center;
     justify-content: center;
-  
-    /* position - 버튼 클릭시 left offset값을 적용시키기 위해 */
-    position: relative;
-    left: 0px;
-  
-    /* size */
-    width: 100%;
-    height: 300px;
-    /* flex item의 flex-shrink는 기본값이 1이므로 컨테이너 크기에 맞게 줄어드는데, 슬라이드를 구현할 것이므로 줄어들지 않도록 0을 준다. */
-    flex-shrink: 0;
-  
-    /* transition */
-    transition: left 0.15s;
-  }
-  .slide_button {
-    /* layout */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  
-    /* position */
-    position: absolute;
-    /* 버튼이 중앙에 위치하게 하기위해 계산 */
-    top: calc(50% - 16px);
-  
-    /* size */
-    width: 32px;
-    height: 32px;
-  
-    /* style */
-    border-radius: 100%;
-    background-color: #cccc;
-    cursor: pointer;
-  }
-  
-  .slide_prev_button {
-    left: 10px;
-  }
-  .slide_next_button {
-    right: 10px;
-  }
-  
-  /* 각 슬라이드가 변경되는 것을 시각적으로 확인하기 쉽도록 각 슬라이드별 색상 적용 */
-  .slide_item.item1 {
-    background-color: darkgoldenrod;
-  }
-  .slide_item.item2 {
-    background-color: aqua;
-  }
-  .slide_item.item3 {
-    background-color: blueviolet;
-  }
-  .slide_item.item4 {
-    background-color: burlywood;
-  }
-  .slide_item.item5 {
-    background-color: cornflowerblue;
-  }
-  
-  /* 페이지네이션 스타일 */
-  ul,
-  li {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
-  .slide_pagination {
-    /* layout */
-    display: flex;
-    gap: 10px;/*이거 안함 삐져나옴*/
-  
-  }
-  .slide_pagination > li {
-    /* 현재 슬라이드가 아닌 것은 투명도 부여 */
-    color: #7fb5ff88;
-    cursor: pointer;
-    font-size: 25px;
-  }
-  .slide_pagination > li.active {
-    /* 현재 슬라이드 색상은 투명도 없이 */
-    color: #7fb5ff;
-  }
-  
-  
+}
+
+.kind_wrap .arrow a > img{
+    width: 15px;
+    height: 15px;
+    gap: 30px;
+}
+.kind_wrap .arrow a{
+    margin: 0px 20px;
+    border: none;
+    background-color: transparent;
+}
+
+/* article */
+.article{
+  background-color: rgb(0, 0, 0); /*색 몰로 하지*/
+}
+.article_1{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+.article_1 p{
+  font-size: var(--basic-font);
+}
+.article_1 fieldset{
+  padding: 70px;
+  margin: 10px;
+}
+.article_1 section img{
+  width: 100%;
+  height: 500px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
