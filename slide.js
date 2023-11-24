@@ -8,7 +8,7 @@ window.onload = function() {
     /* ul 넓이 계산해 주기 */
     const liWidth = slideLis[0].clientWidth;
     const sliderWidth = liWidth * slideLis.length;
-    slider.style.width = `${sliderWidth}px`;
+    slider.style.width = `${sliderWidth}vw`;
 
 
     /* 리스너 설치하기 */
@@ -68,17 +68,5 @@ window.onload = function() {
         moveSlide(nextIdx);
     }, 3000);
 
-    // 마우스가 슬라이드에 올라갔을 때 자동 슬라이드 멈추기
-    kindWrap.addEventListener('mouseover', () => {
-        clearInterval(interval);
-    });
-
-    // 마우스가 슬라이드에서 벗어났을 때 다시 자동 슬라이드 시작
-    kindWrap.addEventListener('mouseleave', () => {
-        clearInterval(interval);
-        interval = setInterval(() => {
-            const nextIdx = (currentIdx + 1) % slideLis.length;
-            moveSlide(nextIdx);
-        }, 5000);
-    });
+z
 };

@@ -59,8 +59,7 @@ header nav ul li a:hover{
 }
 .kind_wrap {   
   width:100%; 
-  max-width:1300px;
-  height: 780px;
+  height: 100vh;
   margin:0 auto 0; 
   position: relative;
   background-position: cover;
@@ -74,7 +73,7 @@ header nav ul li a:hover{
     text-align: center;
 }
 
-.kind_wrap .context{/*-----이거 누르면 게임 나옴-------*/
+.kind_wrap .context{
   position: absolute;
   top: 40%;
   left: 0;
@@ -82,8 +81,9 @@ header nav ul li a:hover{
   text-align: center;
   font-size: 25px
 }
+
 .kind_wrap > .kind_slider {
-  overflow-x: visible; 
+  overflow-x: hidden; 
   overflow-y: hidden;
   overflow: hidden;/*슬라이드 흘러넘치지 않게 하기*/
 }
@@ -96,6 +96,8 @@ header nav ul li a:hover{
 }
 .kind_wrap > .kind_slider img {/* 이미지 위에 딱 붙이기!*/
   vertical-align: top;
+  width: 100vw;
+  height: 100vh;
 }
 .arrow{
     display: flex;
@@ -117,6 +119,7 @@ header nav ul li a:hover{
 .article{
   height: 800px;
   background-color: rgb(0, 0, 0); /*색 몰로 하지*/
+  height: 100vh;
 }
 .article_1{
   display: flex;
