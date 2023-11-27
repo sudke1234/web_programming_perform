@@ -31,7 +31,7 @@ header .logo{/*왼쪽 0으로 고정*/
   font-size: 50px;
   left: 0;
   margin-top: 20px;
-  margin-left: 20px;
+  margin-left: 25px;
 }
 
 header nav{/*오른쪽 0으로 고정*/
@@ -75,7 +75,7 @@ header nav ul li a:hover{
 
 .kind_wrap .context{
   position: absolute;
-  top: 40%;
+  top: 38%;
   left: 0;
   right: 0;
   text-align: center;
