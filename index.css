@@ -22,6 +22,27 @@ header {
   justify-content: space-between;
   align-items: center;
 }
+.arrow{
+  top: 80%;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  position: fixed;
+  height: 50px;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-name: arrow;
+  animation-direction: alternate;
+}
+
+@keyframes arrow {
+  from{
+    top: 87%;
+  }
+  to{
+    top: 90%;
+  }
+}
 
 header .logo , header nav{/*레이어 2앞으로 올리기(z-index)  +  position 고정*/
   position: fixed;
