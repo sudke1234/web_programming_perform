@@ -7,8 +7,18 @@
     <link rel="stylesheet" href="quiz.css">
 </head>
 <body>
-    <div class="button">
-        <button>퀴즈 시작</button>
+    <div id="button">
+        <button id="target">퀴즈 시작</button>
     </div>
+
+    <script>
+        const ChangeButton = document.getElementById('button');//button 가지고 와서
+
+        ChangeButton.addEventListener('click', function(){//클릭시
+            const iframe = parent.document.getElementById('iframe');//indexhtml에서 #iframe찾고 
+
+            iframe.src = 'quiz_1.html';//html 옮기기.
+        })
+    </script>
 </body>
 </html>

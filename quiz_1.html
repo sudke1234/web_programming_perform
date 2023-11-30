@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background:url(./src/background_quiz.jpeg) no-repeat;
+            background-size: cover;
+            font-size: 15px;
+            font-family: 'Yeongdeok Snow Crab';
+        }
+        .wrapper{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+        button{
+            position: relative;
+            width: 30px;
+            height: 30px;
+            border: none;
+            background-color: antiquewhite;
+            border-radius: 10px;
+        }
+        text{
+            text-align: center;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="wrapper">        
+        <h1 id="QuizQuestion">1.플라스틱 페트병은 분해기간이 500년 이상이다.</h1>
+        <div class="button">        
+            <button id="SelectO">O</button>
+            <button id="SelectX">X</button>
+        </div>
+    </div>
+</body>
+
+<script>
+    const quizArray = [
+        "2. 페트병의 라벨을 떼고 플라스틱에 버려야한다.",
+        "3. 분리수거는 중요하다.",
+        "4. 어쩌라는 건지 모르겠다.",
+        "5. 저쩌라는 건지 모르겠다.",
+    ];
+
+    let CurrentIndex = 0;//현재 위치
+
+    const quizQuestion = document.getElementById('QuizQuestion');//id 불러오기
+    const SelectOButton = document.getElementById('SelectO');
+    const SelectXButton = document.getElementById('SelectX');
+
+    SelectOButton.addEventListener('click',function(){
+        if( CurrentIndex == 0 || CurrentIndex == 3 || CurrentIndex == 4){
+            quizQuestion.textContent = "정답입니다!";
+            setTimeout(function(){
+                quizQuestion.textContent = quizArray[CurrentIndex];
+                CurrentIndex++;//3초 기다린 뒤에 배열 나오기
+            },2000);            
+        }
+        else if(  CurrentIndex > quizQuestion.length ){
+            quizQuestion.textContent = "퀴즈 끝!";
+        }
+        else{
+            quizQuestion.textContent = "오답입니다!";
+            setTimeout(function(){
+                quizQuestion.textContent = quizArray[CurrentIndex];
+                CurrentIndex++;//3초 기다린 뒤에 배열 나오기
+            },2000);   
+        }
+    });
+    
+    SelectXButton.addEventListener('click',function(){
+        if( CurrentIndex == 1 || CurrentIndex ==2){
+            quizQuestion.textContent = "정답입니다!"
+            setTimeout(function(){
+                quizQuestion.textContent = quizArray[CurrentIndex];
+                CurrentIndex++;//3초 기다린 뒤에 배열 나오기
+            },2000);  
+        }
+        else if(  CurrentIndex > quizQuestion.length ){
+            quizQuestion.textContent = "퀴즈 끝!";
+        }
+        else{
+            quizQuestion.textContent = "오답입니다!";
+            setTimeout(function(){
+                quizQuestion.textContent = quizArray[CurrentIndex];
+                CurrentIndex++;//3초 기다린 뒤에 배열 나오기
+            },2000);   
+        }
+    })
+
+    for (var i = 0; i < quizArray.length; i++) {
+    console.log(quizArray[i]);
+}  
+</script>
+</html>

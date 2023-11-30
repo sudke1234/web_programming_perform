@@ -7,7 +7,7 @@ body{
     background-color: aliceblue;
 }
 
-.button{
+#button{
     display: flex;
     position: absolute;
     justify-content: center;
@@ -17,6 +17,7 @@ body{
     box-shadow:0 10 10  10px;
 }
 button{
+    cursor: pointer;
     text-align: center;
     width: 300px;
     font-size: 50px;
@@ -24,6 +25,7 @@ button{
     font-family: 'Yeongdeok Snow Crab',sans-serif;
     border: none;
     border-radius: 35px;
+    margin-top: 5px;
 }
 button:hover{
     background-color: rgba(0, 0, 0, 0.2);

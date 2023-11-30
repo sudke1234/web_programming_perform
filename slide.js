@@ -68,5 +68,12 @@ window.onload = function() {
         moveSlide(nextIdx);
     }, 3000);
 
-z
+
 };
+
+function quizboard(){
+    const button = document.querySelector('button');
+    button.addEventListener(()=>{
+
+    });
+}
