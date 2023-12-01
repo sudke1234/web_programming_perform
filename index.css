@@ -10,7 +10,6 @@
   src: url('D:/My Computer/Documents/GitHub/web_programming_perform/font/Yeongdeok Snow Crab.otf');
 }
 
-
 *{
     margin: 0px;
     padding: 0px;
@@ -102,8 +101,21 @@ header nav ul li a:hover{
   left: 0;
   right: 0;
   text-align: center;
-  font-size: 25px
+  font-size: 25px;
 }
+
+@media screen and (max-width: 768px) {
+  .article .kind_wrap .context p{
+    font-size: 35px !important;
+  }
+  header .logo {
+    font-size: 20px;
+  }
+  header nav{
+    font-size: 10px;
+  }
+}
+
 
 .kind_wrap > .kind_slider {
   overflow-x: hidden; 
@@ -172,7 +184,21 @@ header nav ul li a:hover{
 
 .article_3{
   height: var(--basic-height);
-  background-color: rgb(193, 184, 172);
+  background-color: rgb(193, 179, 161);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+
+.article_3 .problem{
+  width: 100px;
+  height: 100px;
+  background-color: rgb(92, 107, 121);
+}
+
+.article_3 .problem:hover{
+  background-color: rgb(0, 0, 0);
 }
 
 .article_4{

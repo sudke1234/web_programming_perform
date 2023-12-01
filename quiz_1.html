@@ -59,49 +59,81 @@
     const quizQuestion = document.getElementById('QuizQuestion');//id 불러오기
     const SelectOButton = document.getElementById('SelectO');
     const SelectXButton = document.getElementById('SelectX');
+    
+    let count = 0; //몇개 맞췄는지 보여주는 숫자
+    let discount = 0;
+
+    function alwayExecute(){
+        if(CurrentIndex === quizArray.length){
+            quizQuestion.innerHTML = "퀴즈 끝!<br>맞은 답 : "+count+"<br>"+"틀린 답 : "+ discount;
+            SelectOButton.style.opacity = '0';
+            SelectXButton.style.opacity = '0';
+        }
+    }
 
     SelectOButton.addEventListener('click',function(){
+    if (CurrentIndex < quizArray.length) {
         if( CurrentIndex == 0 || CurrentIndex == 3 || CurrentIndex == 4){
             quizQuestion.textContent = "정답입니다!";
-            setTimeout(function(){
-                quizQuestion.textContent = quizArray[CurrentIndex];
-                CurrentIndex++;//3초 기다린 뒤에 배열 나오기
-            },2000);            
+            count++;
         }
-        else if(  CurrentIndex > quizQuestion.length ){
-            quizQuestion.textContent = "퀴즈 끝!";
-        }
-        else{
+        else {
             quizQuestion.textContent = "오답입니다!";
-            setTimeout(function(){
-                quizQuestion.textContent = quizArray[CurrentIndex];
-                CurrentIndex++;//3초 기다린 뒤에 배열 나오기
-            },2000);   
+            discount++;
         }
+
+        SelectOButton.disabled = true; // 버튼 비활성화
+        SelectXButton.disabled = true; 
+        SelectOButton.style.opacity = '0';
+        SelectXButton.style.opacity = '0';
+
+
+        setTimeout(function(){//2초 뒤 실행
+            if (CurrentIndex < quizArray.length) {
+                quizQuestion.textContent = quizArray[CurrentIndex];
+                CurrentIndex++;
+                console.log(CurrentIndex);
+                console.log(quizArray.length);
+            }
+            SelectOButton.disabled = false; // 버튼 활성화
+            SelectXButton.disabled = false;
+            SelectOButton.style.opacity = '1';
+            SelectXButton.style.opacity = '1';
+            alwayExecute(); //퀴즈 끝났수?
+        },2000);            
+    }
     });
-    
+
     SelectXButton.addEventListener('click',function(){
-        if( CurrentIndex == 1 || CurrentIndex ==2){
-            quizQuestion.textContent = "정답입니다!"
-            setTimeout(function(){
-                quizQuestion.textContent = quizArray[CurrentIndex];
-                CurrentIndex++;//3초 기다린 뒤에 배열 나오기
-            },2000);  
-        }
-        else if(  CurrentIndex > quizQuestion.length ){
-            quizQuestion.textContent = "퀴즈 끝!";
-        }
-        else{
+    if (CurrentIndex < quizArray.length) {
+        if( CurrentIndex == 1 || CurrentIndex == 2){
+            quizQuestion.textContent = "정답s입니다!";
+            count++;
+        } else {
             quizQuestion.textContent = "오답입니다!";
-            setTimeout(function(){
-                quizQuestion.textContent = quizArray[CurrentIndex];
-                CurrentIndex++;//3초 기다린 뒤에 배열 나오기
-            },2000);   
+            discount++;
         }
+
+        SelectOButton.disabled = true; // 버튼 비활성화
+        SelectXButton.disabled = true; 
+        SelectOButton.style.opacity = '0';
+        SelectXButton.style.opacity = '0';
+
+        setTimeout(function(){//2초 뒤 실행
+            if (CurrentIndex < quizArray.length) {
+                quizQuestion.textContent = quizArray[CurrentIndex];
+                CurrentIndex++;
+            }
+            SelectOButton.disabled = false; // 버튼 활성화
+            SelectXButton.disabled = false;
+            SelectOButton.style.opacity = '1';
+            SelectXButton.style.opacity = '1'; 
+            alwayExecute(); //퀴즈 끝났수?
+        },2000);  
+    }
     })
 
-    for (var i = 0; i < quizArray.length; i++) {
-    console.log(quizArray[i]);
-}  
+    alwayExecute(); //퀴즈 끝났수?
+
 </script>
 </html>
