@@ -302,18 +302,19 @@ header nav ul li a:hover{
   transform: translateY(40px);
 }
 
+#article_4 {
+  height: var(--basic-height);
+  background-color: rgb(217, 206, 179);
+}
 
-
-#article_4{
+#article_4 #div_4{
   display: grid;
   gap: 20px;
   grid-template-rows: 1fr 2fr 2fr 1fr;
   grid-template-columns: 1fr 1.8fr 1fr 1fr 1fr 1fr;
   align-items: center;
   grid-row: 2/span 1;
-  background-color: #a97676;
-  height: var(--basic-height);
-  background-color: antiquewhite;
+  height: 93%;
 }
 
 
@@ -368,13 +369,6 @@ header nav ul li a:hover{
   background-color: #785353;
 }
 
-
-#article_5{
-  height:  var(--basic-height);
-  background-color: rgb(126, 106, 80);
-}
-
-
 #article_6{
   position: relative;
   display: flex;
@@ -382,5 +376,5 @@ header nav ul li a:hover{
   align-items: center;
   text-align: center;
   height:  var(--basic-height);
-  background-color: rgb(164, 143, 116);
+  background-color: rgb(41, 61, 20)
 }
