@@ -12,7 +12,7 @@
         body{
             background-color: white;
             background-size: cover;
-            font-size: 15px;
+            font-size: 25px;
             font-family: 'Yeongdeok Snow Crab';
         }
         .wrapper{
@@ -23,26 +23,29 @@
             height: 100vh;
         }
         .button{
+            margin-top: 10px;
             display: flex;
-            gap: 10px;
+            gap: 50px;
         }
         #SelectO{
             position: relative;
-            width: 30px;
-            height: 30px;
+            width: 70px;
+            height: 70px;
             border: none;
             background-color: rgb(88, 121, 52);
-            border-radius: 10px;
+            border-radius: 20px;
             color: white;
+            font-size: 30px;
         }
         #SelectX{
             position: relative;
-            width: 30px;
-            height: 30px;
+            width: 70px;
+            height: 70px;
             border: none;
             background-color: rgb(88, 121, 52);
-            border-radius: 10px;
+            border-radius: 20px;
             color: white;
+            font-size: 30px;
         }
         text{
             text-align: center;
@@ -79,7 +82,7 @@
     <div class="button-container">
         <button id="target">퀴즈 시작</button>
     </div>
-    <h1 id="QuizQuestion" style="display: none;">1.플라스틱은 합성수지이다.</h1>
+    <h1 id="QuizQuestion" style="display: none;">플라스틱은 합성수지이다.</h1>
     <div class="button">
         <button id="SelectO" style="display: none;">O</button>
         <button id="SelectX" style="display: none;">X</button>
@@ -90,10 +93,10 @@
 
 <script>
     const quizArray = [
-        "2. 페트병의 뚜껑과 라벨은 안 떼고 버려도 된다.",
-        "3. 플라스틱은 환경오염의 주법이다.",
-        "4. 플라스틱을 투기하는 방법중 소각이 제일 비중이 크다.",
-        "5. 개인이 플라스틱 사용을 줄이는 것은 환경을 지키는데 도움이 안된다.",
+        "페트병의 뚜껑과 라벨은 안 떼고 버려도 된다.",
+        "플라스틱은 환경오염의 주법이다.",
+        "플라스틱을 투기하는 방법중 소각이 제일 비중이 크다.",
+        "개인이 플라스틱 사용을 줄이는 것은 환경을 지키는데 도움이 안된다.",
     ];
 
 
