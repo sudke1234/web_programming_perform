@@ -166,18 +166,18 @@ header nav ul li a:hover{
   justify-content: space-around;
   align-items: center;
   text-align: center;
-  height: 95%;
+  height: 93%;
   width: 100%;
   font-size: var(--basic-font);
 }
 .div_2 {
-  height: 5%;
+  height: 7%;
   width: 100%;align-items: center;
 }
 .cursor{
-  height: 70%;
+  height: 50%;
   float: right;
-  margin-right: 15px;
+  margin-right: 35px;
 }
 .cf{
   font-size: var(--basic-font-cf);
