@@ -70,10 +70,10 @@ window.onload = function() {
 
 
 };
-
+//퀴즈 부분 버튼 함수================================
 function quizboard(){
-    const button = document.querySelector('button');
-    button.addEventListener(()=>{
-
+    const button = document.getElementById('target');
+    button.addEventListener("click",()=>{
+        button.style.opacity = '0';
     });
-}
+};
