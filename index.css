@@ -151,12 +151,12 @@ header nav ul li a:hover{
 }
 
 /* article */
-.article{
+#article{
   height: 800px;
   background-color: rgb(0, 0, 0); /*색 몰로 하지*/
   height: var(--basic-height);
 }
-.article_1{
+#article_1{
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -175,12 +175,12 @@ header nav ul li a:hover{
   }
 }
 
-.article_2{
+#article_2{
   height: var(--basic-height);
   background-color: antiquewhite;
 }
 
-.article_3{
+#article_3{
   height: var(--basic-height);
   background-color: rgb(193, 179, 161);
   display: flex;
@@ -199,18 +199,18 @@ header nav ul li a:hover{
   background-color: rgb(0, 0, 0);
 }
 
-.article_4{
+#article_4{
   height: var(--basic-height);
   background-color: antiquewhite;
 }
 
-.article_5{
+#article_5{
   height:  var(--basic-height);
   background-color: rgb(126, 106, 80);
 }
 
 
-.article_6{
+#article_6{
   display: flex;
   justify-content: center;
   align-items: center;
