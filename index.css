@@ -2,6 +2,7 @@
   --basic-color : #000000; 
   --basic-font : 65px;
   --basic-font-logo : 50px;
+  --basic-font-a : 50px;
   --basic-font-logo-color : white;
   --basic-font-cf : 30px;
   --basic-height : 100vh;
@@ -60,7 +61,7 @@ header .logo{/*왼쪽 0으로 고정*/
 
 header nav{/*오른쪽 0으로 고정*/
   right: 20px;
-  margin-top: 30px;
+  margin-top: 15px;
 }
 
 header nav ul {
@@ -71,11 +72,13 @@ header nav ul {
 
 header nav ul li {
   margin-right: 20px;
-}
-
-header nav ul li a {
   color: white;
   text-decoration: none;
+  font-size: var(--basic-font-a);
+}
+
+#li1 {
+  color: pink;
 }
 
 header nav ul li a:hover{
@@ -221,28 +224,30 @@ header nav ul li a:hover{
   margin-bottom: 50px;
 }
 #article_3 {
+  background-color: white;
+}
+
+#article_3 #div_3 {
+  font-size: var(--basic-font);
+  color: black;
+  height: 93%;
   display: flex;
-  background-color: rgb(193, 179, 161);
   justify-content: center;
   flex-direction: column-reverse;
   align-items: center;
   text-align: center;
-}
-
-#article_3 p {
-  font-size: var(--basic-font);
 }
 #article_3 .problem_text{
   font-size: 25px;
   position: absolute;
   transform: translateY(-550%);
 }
-
 #article_3 .problems {
   margin-top: 30px;
   display: flex;
   gap: 20px;
 }
+
 
 
 #article_3 .problem:hover {
