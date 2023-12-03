@@ -291,6 +291,13 @@ header nav ul li a:hover{
 
 
 #article_4{
+  display: grid;
+  gap: 20px;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1.8fr 1fr 1fr 1fr 1fr;
+  align-items: center;
+  grid-row: 2/span 1;
+  background-color: #a97676;
   height: var(--basic-height);
   background-color: antiquewhite;
 }
