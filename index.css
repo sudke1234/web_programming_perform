@@ -163,18 +163,16 @@ header nav ul li a:hover{
   text-align: center;
   height: var(--basic-height);
 }
-.article_1 p{
+.article_1  span{
   font-size: var(--basic-font);
 }
-.article_1 fieldset{
-  padding: 70px;
-  margin: 10px;
+.article_1 > section > .blink  {/*깜박*/
+  animation: blink 0.2s infinite;
 }
-.article_1 section img{
-  width: 100%;
-  height: 500px;
-  margin-top: 50px;
-  margin-bottom: 50px;
+@keyframes blink {/* 참고로 안해줘도 되는데 텍스트 | 이거 깜박거리게 해주는 거*/
+  to{
+    opacity: 0;
+  }
 }
 
 .article_2{

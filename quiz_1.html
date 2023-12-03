@@ -65,7 +65,7 @@
 
     function alwayExecute(){
         if(CurrentIndex === quizArray.length){
-            quizQuestion.innerHTML = "퀴즈 끝!<br>맞은 답 : "+count+"<br>"+"틀린 답 : "+ discount;
+            quizQuestion.innerHTML = "퀴즈 끝!<br>맞은 답 : "+count+"<br>"+"틀린 답 : "+ discount;//br태그가 textcontent에선 안먹힘..
             SelectOButton.style.opacity = '0';
             SelectXButton.style.opacity = '0';
         }
@@ -107,7 +107,7 @@
     SelectXButton.addEventListener('click',function(){
     if (CurrentIndex < quizArray.length) {
         if( CurrentIndex == 1 || CurrentIndex == 2){
-            quizQuestion.textContent = "정답s입니다!";
+            quizQuestion.textContent = "정답입니다!";
             count++;
         } else {
             quizQuestion.textContent = "오답입니다!";
