@@ -1,7 +1,8 @@
 :root{
   --basic-color : #000000; 
-  --basic-font : 50px;
+  --basic-font : 65px;
   --basic-font-logo : 50px;
+  --basic-font-cf : 30px;
   --basic-height : 100vh;
 }
 @font-face {
@@ -157,52 +158,55 @@ header nav ul li a:hover{
   height: var(--basic-height);
 }
 
-#article_1{
+#article_1, #article_2{
+  height: var(--basic-height);
+}
+.div_1{
   display: flex;
   justify-content: space-around;
   align-items: center;
   text-align: center;
-  height: var(--basic-height);
-}
-#article_1 p{
+  height: 95%;
+  width: 100%;
   font-size: var(--basic-font);
 }
+.div_2 {
+  height: 5%;
+  width: 100%;align-items: center;
+}
+.cursor{
+  height: 70%;
+  float: right;
+  margin-right: 15px;
+}
+.cf{
+  font-size: var(--basic-font-cf);
+  float: right;
+  margin-right: 5px;
+}
+
 #article_1 fieldset{
   padding: 70px;
   margin: 10px;
 }
-
-.imgs {
+#hot, #pressure {
+  color: rgb(88, 121, 52);
+}
+#hot:hover, #pressure:hover {
+  color: rgb(75, 108, 40);
+}
+#imgs {
   width: 100%;
   height: 500px;
   margin-top: 50px;
   margin-bottom: 50px;
 }
-.trash_img{
-  object-fit: contain;
-}
-.hot_img {
-  display: none;
-  object-fit: contain;
-}
 
-#article_2{
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  text-align: center;
-  height: var(--basic-height);
-  background-color: antiquewhite;
-}
-#article_2 p{
-  font-size: var(--basic-font);
-  align-self: center;
-}
 #article_2 fieldset{
   padding: 70px;
   margin: 10px;
 }
-#article_2 section img{
+#imgs2 {
   width: 100%;
   height: 500px;
   margin-top: 50px;
