@@ -354,13 +354,6 @@ header nav ul li a:hover{
   background-color: #785353;
 }
 
-
-#article_5{
-  height:  var(--basic-height);
-  background-color: rgb(126, 106, 80);
-}
-
-
 #article_6{
   position: relative;
   display: flex;
