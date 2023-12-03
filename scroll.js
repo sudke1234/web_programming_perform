@@ -7,11 +7,11 @@ var li4 = document.getElementById("li4");
 var li5 = document.getElementById("li5");
 
 var winH = window.innerHeight;
-var art1H = winH;
-var art2H = winH*2; 
-var art3H = winH*3; 
-var art4H = winH*4; 
-var art5H = winH*5; 
+var art1H = winH*95/100;
+var art2H = winH + winH*95/100; 
+var art3H = winH*2 + winH*95/100; 
+var art4H = winH*3 + winH*95/100; 
+var art5H = winH*4 + winH*95/100; 
 
 var tcolor = "white";
 
