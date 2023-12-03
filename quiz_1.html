@@ -22,6 +22,10 @@
             flex-direction: column;
             height: 100vh;
         }
+        .button{
+            display: flex;
+            gap: 10px;
+        }
         #SelectO{
             position: relative;
             width: 30px;
@@ -41,112 +45,114 @@
         text{
             text-align: center;
         }
-            
+
         .button-container {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 1; 
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
         }
         .wrapper #target,#restart {
-        cursor: pointer;
-        text-align: center;
-        width: 300px;
-        font-size: 50px;
-        padding: 10px;
-        font-family: 'Yeongdeok Snow Crab', sans-serif;
-        border: none;
-        border-radius: 35px;
-        margin-top: 5px;
+            cursor: pointer;
+            text-align: center;
+            width: 300px;
+            font-size: 50px;
+            padding: 10px;
+            font-family: 'Yeongdeok Snow Crab', sans-serif;
+            border: none;
+            border-radius: 35px;
+            margin-top: 5px;
         }
 
         .wrapper #target:hover,#restart:hover{
-        background-color: rgba(0, 0, 0, 0.2);
-        transition: all 0.5s;
+            background-color: rgba(0, 0, 0, 0.2);
+            transition: all 0.5s;
         }
     </style>
 
 </head>
 <body>
-    <div class="wrapper">
-        <div class="button-container">
-            <button id="target" onclick="quizboard()">퀴즈 시작</button>
-            <button id="restart" onclick="Restart()" style="display: none;">다시 시작</button>
-        </div>
-        <h1 id="QuizQuestion" style="display: none;"></h1>
-        <div class="button">
-            <button id="SelectO" style="display: none;">O</button>
-            <button id="SelectX" style="display: none;">X</button>
-        </div>
+<div class="wrapper">
+    <div class="button-container">
+        <button id="target">퀴즈 시작</button>
     </div>
+    <h1 id="QuizQuestion" style="display: none;">1.플라스틱은 합성수지이다.</h1>
+    <div class="button">
+        <button id="SelectO" style="display: none;">O</button>
+        <button id="SelectX" style="display: none;">X</button>
+    </div>
+    <button id="restart" style="display: none;">다시 시작</button>
+</div>
 </body>
 
-    <script>
-        const quizArray = [
-            "1.플라스틱 페트병은 분해기간이 500년 이상이다.",
-            "2. 페트병의 라벨을 떼고 플라스틱에 버려야한다.",
-            "3. 분리수거는 중요하다.",
-            "4. 어쩌라는 건지 모르겠다.",
-            "5. 저쩌라는 건지 모르겠다.",
-        ];
+<script>
+    const quizArray = [
+        "2. 페트병의 뚜껑과 라벨은 안 떼고 버려도 된다.",
+        "3. 플라스틱은 환경오염의 주법이다.",
+        "4. 플라스틱을 투기하는 방법중 소각이 제일 비중이 크다.",
+        "5. 개인이 플라스틱 사용을 줄이는 것은 환경을 지키는데 도움이 안된다.",
+    ];
 
-        let CurrentIndex = 0;
-        const quizQuestion = document.getElementById('QuizQuestion');
-        const SelectOButton = document.getElementById('SelectO');
-        const SelectXButton = document.getElementById('SelectX');
-        const restartButton = document.getElementById('restart');
-        const button = document.getElementById('target');
 
-        let count = 0;
-        let discount = 0;
+    const quizQuestion = document.getElementById('QuizQuestion');
+    const SelectOButton = document.getElementById('SelectO');
+    const SelectXButton = document.getElementById('SelectX');
+    const restartButton = document.getElementById('restart');
+    const button = document.getElementById('target');
 
-        function alwayExecute(){
-            if(CurrentIndex === quizArray.length){
-                quizQuestion.innerHTML = "퀴즈 끝!<br>맞은 답 : "+count+"<br>"+"틀린 답 : "+ discount;
-                SelectOButton.style.opacity = '0';
-                SelectXButton.style.opacity = '0';
-                restartButton.style.display = "block";
-            }
+    let current_index = 0;
+    let count = 0;
+    let discount = 0;
+
+    const alwaysExecute = () => {
+        if(current_index === quizArray.length){
+            quizQuestion.innerHTML = "퀴즈 끝!<br>맞은 답 : "+count+"<br>"+"틀린 답 : "+ discount;
+            SelectOButton.style.opacity = '0';
+            SelectXButton.style.opacity = '0';
+            restartButton.style.display = "block";
+            current_index = 0;
+            console.log(current_index);
         }
+    };
 
-        SelectOButton.addEventListener('click', function(){
-            if (CurrentIndex < quizArray.length) {
-                if( CurrentIndex == 0 || CurrentIndex == 3 || CurrentIndex == 4){
-                    quizQuestion.textContent = "정답입니다!";
-                    count++;
-                }
-                else {
-                    quizQuestion.textContent = "오답입니다!";
-                    discount++;
-                }
-
-                SelectOButton.disabled = true; // 버튼 비활성화
-                SelectXButton.disabled = true; 
-                SelectOButton.style.opacity = '0';
-                SelectXButton.style.opacity = '0';
-
-
-                setTimeout(function(){//2초 뒤 실행
-                    if (CurrentIndex < quizArray.length) {
-                        quizQuestion.textContent = quizArray[CurrentIndex];
-                        CurrentIndex++;
-                        console.log(CurrentIndex);
-                        console.log(quizArray.length);
-                    }
-                    SelectOButton.disabled = false; // 버튼 활성화
-                    SelectXButton.disabled = false;
-                    SelectOButton.style.opacity = '1';
-                    SelectXButton.style.opacity = '1';
-                    alwayExecute(); //퀴즈 끝났수?
-                },2000);            
+    SelectOButton.addEventListener('click', function(){
+        if (current_index < quizArray.length) {
+            if( current_index === 0 || current_index === 2 || current_index === 3 ){
+                quizQuestion.textContent = "정답입니다!";
+                count++;
             }
-        });
+            else {
+                quizQuestion.textContent = "오답입니다!";
+                discount++;
+            }
+
+            SelectOButton.disabled = true; // 버튼 비활성화
+            SelectXButton.disabled = true;
+            SelectOButton.style.opacity = '0';
+            SelectXButton.style.opacity = '0';
 
 
-        SelectXButton.addEventListener('click', function(){
-        if (CurrentIndex < quizArray.length) {
-            if( CurrentIndex == 1 || CurrentIndex == 2){
+            setTimeout(() => {//2초 뒤 실행
+                if (current_index < quizArray.length) {
+                    quizQuestion.textContent = quizArray[current_index];
+                    current_index++;
+                    console.log(current_index);
+                    console.log(quizArray.length);
+                }
+                SelectOButton.disabled = false; // 버튼 활성화
+                SelectXButton.disabled = false;
+                SelectOButton.style.opacity = '1';
+                SelectXButton.style.opacity = '1';
+                alwaysExecute(); //퀴즈 끝났수?
+            },2000);
+        }
+    });
+
+
+    SelectXButton.addEventListener('click', function(){
+        if (current_index < quizArray.length) {
+            if( current_index === 1 || current_index === 4){
                 quizQuestion.textContent = "정답입니다!";
                 count++;
             } else {
@@ -155,44 +161,49 @@
             }
 
             SelectOButton.disabled = true; // 버튼 비활성화
-            SelectXButton.disabled = true; 
+            SelectXButton.disabled = true;
             SelectOButton.style.opacity = '0';
             SelectXButton.style.opacity = '0';
 
             setTimeout(function(){//2초 뒤 실행
-                if (CurrentIndex < quizArray.length) {
-                    quizQuestion.textContent = quizArray[CurrentIndex];
-                    CurrentIndex++;
+                if (current_index < quizArray.length) {
+                    quizQuestion.textContent = quizArray[current_index];
+                    current_index++;
                 }
                 SelectOButton.disabled = false; // 버튼 활성화
                 SelectXButton.disabled = false;
                 SelectOButton.style.opacity = '1';
-                SelectXButton.style.opacity = '1'; 
-                alwayExecute(); //퀴즈 끝났수?
-            },2000);  
+                SelectXButton.style.opacity = '1';
+                alwaysExecute(); //퀴즈 끝났수?
+            },2000);
         }
     });
 
-    alwayExecute();
-//퀴즈 시작 버튼
-    function quizboard(){
+    //퀴즈 시작 버튼
+    button.addEventListener('click', () => {
         quizQuestion.style.display = "block";
         SelectOButton.style.display = "block";
         SelectXButton.style.display = "block";
         button.style.opacity = '1';
         button.style.display = 'none';
         button.disabled = true;
-    }
-//다시시작 버튼
-    function Restart(){
+        alwaysExecute();
+    });
+
+    //다시시작 버튼
+    restartButton.addEventListener('click', () => {
         restartButton.style.display = "none";
         button.style.display = "block";
         button.style.opacity = '1';
-        CurrentIndex = 0;
-        count = 0;
-        discount = 0;
         quizQuestion.style.display = "none";
-        alwayExecute();
-    }
-    </script>
+        button.disabled = false;
+
+        alwaysExecute();
+    });
+
+    alwaysExecute();
+    current_index = 0;
+    count = 0;
+    discount = 0;
+</script>
 </html>
