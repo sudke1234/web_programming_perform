@@ -51,15 +51,13 @@ var tcolor = "white";
       li3.style.color = "pink";
       li3.innerHTML = "✿";
     }
-    else if (scrPos>art4H && scrPos<=art5H) {
+    else if (scrPos>art4H && scrPos<art5H) {
       logo.style.color = "white";
       tcolor = "white";
       li4.style.color = "pink";
       li4.innerHTML = "✿";
     }
-    else if (scrPos>art5H){
-      logo.style.color = "rgb(88, 121, 52)";
-      tcolor = "rgb(88, 121, 52)";
+    else {
       li5.style.color = "pink";
       li5.innerHTML = "✿";
     }
