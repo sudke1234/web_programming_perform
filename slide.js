@@ -10,6 +10,8 @@ window.onload = function() {
     const sliderWidth = liWidth * slideLis.length;
     slider.style.width = `${sliderWidth}vw`;
 
+
+    /* 리스너 설치하기 */
     let currentIdx = 0; // 슬라이드 현재 번호
     let translate = 0; // 슬라이드 위치 값
 
@@ -74,24 +76,4 @@ function quizboard(){
     button.addEventListener(()=>{
 
     });
-};
-
-const content = "플라스틱은 열과 압력으로 인해 모양을 변형시킬수 있는 합성수지이다.";
-const text = document.querySelector(".article > section > .text");
-
-text.textContent = "";//text써지기
-
-let txtIdx = 0; // 텍스트 현재 위치
-
-function typing(){ 
-    let txt = content[txtIdx++];
-    if( txt == undefined) return;
-    text.innerHTML += txt ==  "\n" ? "<br/>" : txt;
-    if(txtldx > content.length){
-        txtIdx = 0; // 틀리면 다시 가지고 오셈
-    }
-    else{
-        setTimeout(typing,100)
-    }
-    typing();
 }
