@@ -248,10 +248,24 @@ header nav ul li a:hover{
   gap: 20px;
 }
 
+.problem {
+  width: 100px;
+  height: 100px;
+  background-color: #ccc;
+  margin: 10px;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.problem:hover {
+  opacity: 0.6;
+}
 
 
-#article_3 .problem:hover {
-  background: rgba(0, 0, 0, 0.8);
+
+
+#article_3 .div_3 > .problems > .problem:hover {
+  opacity: 0.5 !important;
 }
 
 #article_3 .problem {
