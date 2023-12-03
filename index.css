@@ -290,6 +290,59 @@ header nav ul li a:hover{
   background-color: antiquewhite;
 }
 
+
+#article_4 .website{
+  display:flex;
+  text-align: center;
+  background-color: #9c9c9c;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--basic-font-logo);
+}
+
+
+#article_4 .website:hover{
+  background-color: rgba(0, 0,0.8);
+}
+
+#article_4 .website:nth-child(1){
+  background: url(./src/website1.png);
+  background-size: cover;
+  grid-column: 2 /span 2;
+  grid-row: 2/span 1;
+  background-color: #a97676;
+}
+#article_4 .website:nth-child(2){
+  background:url(./src/website2.jpeg);
+  background-size: cover;
+  grid-column-start: 2;
+	grid-column-end: 3;
+	grid-row-start: 3;
+	grid-row-end: 3;
+  background-color: #000000;
+}
+
+#article_4 .website:nth-child(3){
+  background:url(./src/website3.png);
+  background-size: cover;
+  grid-column: 4/2 span;
+	grid-row-start: 2;
+	grid-row-end: 3;
+  background-color: #565656;
+}
+
+#article_4 .website:nth-child(4){
+  background: url(./src/website4.png);
+  background-size: cover;
+  grid-column: 3 / 3 span;
+	grid-row-start: 3;
+	grid-row-end: 3;
+  background-color: #785353;
+}
+
+
 #article_5{
   height:  var(--basic-height);
   background-color: rgb(126, 106, 80);

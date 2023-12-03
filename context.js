@@ -61,5 +61,77 @@ function showContent() {
   }
 
 
+
+  /*=========================================================================== */
+  function showContent5() {
+    const p1 = document.getElementById('website1');
+    p1.style.textDecoration ="none";
+    p1.style.display = "block";
+    p1.style.color = "white";
+    p1.style.fontSize = "25px"; 
+  }
+
+  
+  function hideContent5() {
+    const p1 = document.getElementById('website1');
+    p1.style.backgroundColor = ''; // 기존 배경색으로 돌아가게 설정
+    p1.style.display = "none";
+  }
+
+  function showContent6() {
+    const p1 = document.getElementById('website2');
+    p1.style.display = "block";
+    p1.style.textDecoration ="none";
+    p1.style.color = "white";
+    p1.style.fontSize = "25px";
+  }
+
+  
+  function hideContent6() {
+    const p1 = document.getElementById('website2');
+    p1.style.backgroundColor = '';
+    p1.style.display = "none";
+  }
+
+
+  function showContent7() {
+    const p1 = document.getElementById('website3');
+    p1.style.display = "block";
+    p1.style.textDecoration ="none";
+    p1.style.color = "white";
+    p1.style.fontSize = "25px";
+  }
+
+  
+  function hideContent7() {
+    const p1 = document.getElementById('website3');
+    p1.style.backgroundColor = ''; 
+    p1.style.display = "none";
+  }
+
+
+  function showContent8() {
+    const p1 = document.getElementById('website4');
+    p1.style.display = "block";
+    p1.style.textDecoration ="none";
+    p1.style.color = "white";
+    p1.style.fontSize = "25px";
+  }
+
+  
+  function hideContent8() {
+    const p1 = document.getElementById('website4');
+    p1.style.backgroundColor = ''; 
+    p1.style.display = "none";
+  }
+
+
+
+  
+  
+  
+  
+  
+  
   
   
