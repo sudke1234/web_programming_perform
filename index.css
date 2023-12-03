@@ -115,6 +115,13 @@ header nav ul li a:hover{
   header nav{
     font-size: 10px;
   }
+  #article_3 p{
+    font-size: 25px !important; /*ㅎㅎ..;;*/
+  }
+  #article_3 .problem{
+    width: 200px !important;
+    height: 200px !important;/*ㅎㅎ;;*/
+  }
 }
 
 
@@ -212,28 +219,70 @@ header nav ul li a:hover{
   margin-top: 50px;
   margin-bottom: 50px;
 }
-
-#article_3{
-  height: 100vh;
-  width: 100%;
-  background-color: rgb(193, 179, 161);
+#article_3 {
   display: flex;
+  background-color: rgb(193, 179, 161);
+  justify-content: center;
+  flex-direction: column-reverse;
   align-items: center;
   text-align: center;
 }
-#article_3 p{
+
+#article_3 p {
   font-size: var(--basic-font);
 }
-
-.article_3 .problem{
-  width: 100px;
-  height: 100px;
-  background-color: rgb(92, 107, 121);
+#article_3 .problem_text{
+  font-size: 25px;
+  position: absolute;
+  transform: translateY(-550%);
 }
 
-.article_3 .problem:hover{
-  background-color: rgb(0, 0, 0);
+#article_3 .problems {
+  margin-top: 30px;
+  display: flex;
+  gap: 20px;
 }
+
+
+#article_3 .problem:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+#article_3 .problem {
+  border-radius: 10px;
+  width: 300px;
+  height: 300px;
+  font-size: var(--basic-font-logo);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff; /* 모든 요소의 기본 배경색 설정 */
+}
+
+#article_3 .problem:nth-child(1){
+  background:url(./src/problem1.png);
+  background-size: cover;
+} 
+#article_3 .problem:nth-child(2) {
+  background:url(./src/problem2.jpg);
+  background-size: cover;
+  /* 2번째 요소를 약간 위로 이동 transform */
+  transform: translateY(40px)
+}
+
+#article_3 .problem:nth-child(3){
+  background: url(./src/problem3.jpg);
+  background-size: cover;
+} 
+
+#article_3 .problem:nth-child(4) {
+  background:url(./src/problem4.png);
+  background-size: cover;
+  /* 4번째 요소를 약간 위로 이동 transform */
+  transform: translateY(40px);
+}
+
+
 
 #article_4{
   height: var(--basic-height);
