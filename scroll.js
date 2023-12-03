@@ -67,4 +67,3 @@ var tcolor = "white";
   }
 
   window.addEventListener("scroll", HandleScroll);
-  window.addEventListener("click", HandleScroll);
