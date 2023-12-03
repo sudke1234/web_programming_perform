@@ -2,6 +2,7 @@
   --basic-color : #000000; 
   --basic-font : 65px;
   --basic-font-logo : 50px;
+  --basic-font-logo-color : white;
   --basic-font-cf : 30px;
   --basic-height : 100vh;
 }
@@ -20,7 +21,7 @@ body{
   font-family: 'Yeongdeok Snow Crab',sans-serif;
 }
 header {
-  color: white;
+  color:var( --basic-font-logo-color);
   justify-content: space-between;
   align-items: center;
 }
