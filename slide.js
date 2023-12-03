@@ -74,8 +74,6 @@ function quizboard(){
     button.addEventListener(()=>{
 
     });
-<<<<<<< Updated upstream
-=======
 };
 
 const content = "플라스틱은 열과 압력으로 인해 모양을 변형시킬수 있는 합성수지이다.";
@@ -96,5 +94,4 @@ function typing(){
         setTimeout(typing,100)
     }
     typing();
->>>>>>> Stashed changes
 }
